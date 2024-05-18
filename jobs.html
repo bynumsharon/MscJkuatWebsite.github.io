@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - JKUAT Career Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="images/home.png" alt="JKUAT Logo" class="logo">
+            </div>
+            <h1>JKUAT Career Center</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Job details or job listings will be injected here by JavaScript -->
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with the latest job opportunities and career tips.</p>
+                <form class="subscribe-form" action="#" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address">
+                    <button type="submit" class="subscribe-button">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-column">
+                <h3>Headquarters</h3>
+                <p>Nairobi CBD Campus<br>JKUAT Towers (former ICEA)-Kenyatta Avenue<br>P.O. Box 62000 – 00200, Nairobi.<br>Tel: 0705950712</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p>Email: info@jkuatcareers.com<br>Phone: +254 123 456 789<br>Address: Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const jobs = {
+            '1': {
+                'title': 'Software Developer',
+                'company': 'Safaricom Limited Company',
+                'salary': '$60,000/year',
+                'type': 'Full-time',
+                'description': 'A great opportunity for a Software Developer to join our team...',
+                'image': 'images/logo1.png',
+                'date': 'May 2024'
+            },
+            '2': {
+                'title': 'Marketing Specialist',
+                'company': 'KCB Bank Limited',
+                'salary': '$50,000/year',
+                'type': 'Contract',
+                'description': 'We are looking for a talented Marketing Specialist...',
+                'image': 'images/logo4.png',
+                'date': 'April 2024'
+            },
+            '3': {
+                'title': 'Data Analyst',
+                'company': 'Equity Bank Limited',
+                'salary': '$55,000/year',
+                'type': 'Full-time',
+                'description': 'Join our team as a Data Analyst and help us make data-driven decisions...',
+                'image': 'images/logo5.png',
+                'date': 'May 2024'
+            },
+            '4': {
+                'title': 'HR Manager',
+                'company': 'Kenya Airways',
+                'salary': '$65,000/year',
+                'type': 'Full-time',
+                'description': 'We are seeking an experienced HR Manager to lead our HR department...',
+                'image': 'images/logo6.jpeg',
+                'date': 'April 2024'
+            },
+        };
+
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        const jobId = getParameterByName('id');
+        const mainContent = document.getElementById('main-content');
+
+        if (jobId && jobs[jobId]) {
+            const job = jobs[jobId];
+            mainContent.innerHTML = `
+                <section class="job-details">
+                    <h2>${job.title}</h2>
+                    <img src="${job.image}" alt="${job.company}">
+                    <p><strong>Company:</strong> ${job.company}</p>
+                    <p><strong>Salary:</strong> ${job.salary}</p>
+                    <p><strong>Type:</strong> ${job.type}</p>
+                    <p><strong>Description:</strong> ${job.description}</p>
+                    <p><strong>Posted:</strong> ${job.date}</p>
+                    <button class="apply-button" onclick="window.location.href='apply.html?id=${jobId}'">Apply Now</button>
+                </section>
+            `;
+        } else {
+            mainContent.innerHTML = `
+                <section class="available-jobs">
+                    <h2>Available Jobs</h2>
+                    <div class="job-container">
+                        ${Object.keys(jobs).map(id => `
+                            <div class="job">
+                                <img src="${jobs[id].image}" alt="${jobs[id].company}">
+                                <h3>${jobs[id].title}</h3>
+                                <p>Company: ${jobs[id].company}</p>
+                                <p>Salary: ${jobs[id].salary}</p>
+                                <p>Type: ${jobs[id].type}</p>
+                                <p>Posted: ${jobs[id].date}</p>
+                                <button class="view-details" onclick="window.location.href='jobs.html?id=${id}'">View Details</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+        }
+    </script>
+</body>
+</html>

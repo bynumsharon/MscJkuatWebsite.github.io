@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - JKUAT Career Center</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-details-container {
+            background-color: #e6ffe6; /* Light green background */
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .contact-method img {
+            width: 30px; /* Adjust the width as needed */
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="images/home.png" alt="JKUAT Logo" class="logo">
+            </div>
+            <h1>JKUAT Career Center</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="contact-form-container">
+                <h2>Get in Touch</h2> <!-- Updated heading -->
+                <form action="process_contact.html" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="green-button">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-details-container"> <!-- New container for contact details -->
+                <h2>Contact Us</h2>
+                <div class="contact-method">
+                    <img src="images/contact.png" alt="Email Icon">
+                    <p>Email: info@jkuatcareercenter.com</p>
+                </div>
+                <div class="contact-method">
+                    <img src="images/fb.png" alt="Facebook Icon">
+                    <p>Facebook: Jkuat Careers Official</p>
+                </div>
+                <div class="contact-method">
+                    <img src="images/twitter.png" alt="Twitter Icon">
+                    <p>Twitter: Jkuat Careers Official</p>
+                </div>
+                <div class="contact-method">
+                    <img src="images/in.png" alt="LinkedIn Icon">
+                    <p>LinkedIn: Jkuat Careers Official</p>
+                </div>
+                <div class="contact-method">
+                    <img src="images/phone-call.png" alt="Phone Icon">
+                    <p>Phone: +1234567890</p>
+                </div>
+                <div class="contact-method">
+                    <img src="images/placeholder.png" alt="Address Icon">
+                    <p>Address: 123 Main Street, City, Country</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with the latest job opportunities and career tips.</p>
+                <form class="subscribe-form" action="#" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address">
+                    <button type="submit" class="subscribe-button">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-column">
+                <h3>Headquarters</h3>
+                <p>Nairobi CBD Campus<br>JKUAT Towers (former ICEA)-Kenyatta Avenue<br>P.O. Box 62000 – 00200, Nairobi.<br>Tel: 0705950712</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p>Email: info@jkuatcareers.com<br>Phone: +254 123 456 789<br>Address: Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

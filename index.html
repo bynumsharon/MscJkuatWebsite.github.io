@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKUAT Career Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="images/home.png" alt="JKUAT Logo" class="logo">
+            </div>
+            <h1>JKUAT Career Center</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/ban-img.jpg" alt="Home Image 1" class="home-image">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/banner.jpg" alt="Home Image 2" class="home-image">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="welcome-content">
+                <h2>Welcome to JKUAT Career Center</h2>
+                <p>Your gateway to career opportunities and job placements.</p>
+                <button class="green-button" onclick="window.location.href='register.html'">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Featured Jobs Section -->
+        <section class="featured-jobs">
+            <h2>Featured Jobs</h2>
+            <div class="job-container">
+                <div class="job">
+                    <img src="images/logo1.png" alt="Company 1">
+                    <h3>Software Developer</h3>
+                    <p>Company: Safaricom Limited Company</p>
+                    <p>Salary: $60,000/year</p>
+                    <p>Type: Full-time</p>
+                    <p>Posted: May 2024</p>
+                    <button class="view-details" onclick="window.location.href='jobs.html'">View Details</button>
+                </div>
+                <div class="job">
+                    <img src="images/logo4.png" alt="Company 2">
+                    <h3>Marketing Specialist</h3>
+                    <p>Company: KCB Bank Ltd</p>
+                    <p>Salary: $50,000/year</p>
+                    <p>Type: Contract</p>
+                    <p>Posted: April 2024</p>
+                    <button class="view-details" onclick="window.location.href='jobs.html'">View Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Posted Jobs Section -->
+        <section class="latest-jobs">
+            <h2>Latest Posted Jobs</h2>
+            <div class="job-container">
+                <div class="job">
+                    <img src="images/logo5.png" alt="Company 3">
+                    <h3>Data Analyst</h3>
+                    <p>Company: Equity Bank Limited</p>
+                    <p>Salary: $55,000/year</p>
+                    <p>Type: Full-time</p>
+                    <p>Posted: May 2024</p>
+                    <button class="view-details" onclick="window.location.href='jobs.html'">View Details</button>
+                </div>
+                <div class="job">
+                    <img src="images/logo6.jpeg" alt="Company 4">
+                    <h3>HR Manager</h3>
+                    <p>Company: Kenya Airways</p>
+                    <p>Salary: $65,000/year</p>
+                    <p>Type: Full-time</p>
+                    <p>Posted: April 2024</p>
+                    <button class="view-details" onclick="window.location.href='jobs.html'">View Details</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial-slideshow-container">
+                <div class="testimonial-slide fade">
+                    <img src="images/p1.jpeg" alt="John Duncan" class="testimonial-profile">
+                    <p>"JKUAT Career Center helped me find my dream job. The process was seamless and very efficient."</p>
+                    <p>- John Doe, Software Developer</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-slide fade">
+                    <img src="images/p5.jpeg" alt="Sharon Bynum" class="testimonial-profile">
+                    <p>"I found the perfect candidate for our company through JKUAT Career Center. Highly recommend!"</p>
+                    <p>- Sharon Bynum, Senior Technical Consultant</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-slide fade">
+                    <img src="images/p3.jpeg" alt="Jane Maximillian" class="testimonial-profile">
+                    <p>"I learned a lot from the JKUAT Alumni who guided me immediately after my graduation through JKUAT Career Center. Highly recommend!"</p>
+                    <p>- Jane Maximillian, HR Manager</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial-slide fade">
+                    <img src="images/p2.jpeg" alt="Lorine Kendry" class="testimonial-profile">
+                    <p>"I found the perfect candidate for our company through JKUAT Career Center. Highly recommend!"</p>
+                    <p>- Lorine Kendry, Vice President, Facebook</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 'testimonial')">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'testimonial')">&#10095;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with the latest job opportunities and career tips.</p>
+                <form class="subscribe-form" action="#" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address">
+                    <button type="submit" class="subscribe-button">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-column">
+                <h3>Headquarters</h3>
+                <p>Nairobi CBD Campus<br>JKUAT Towers (former ICEA)-Kenyatta Avenue<br>P.O. Box 62000 – 00200, Nairobi.<br>Tel: 0705950712</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p>Email: info@jkuatcareers.com<br>Phone: +254 123 456 789<br>Address: Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

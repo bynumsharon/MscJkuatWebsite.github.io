@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details - JKUAT Career Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="images/home.png" alt="JKUAT Logo" class="logo">
+            </div>
+            <h1>JKUAT Career Center</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="center-form">
+                <h2 id="job-title">Job Title</h2>
+                <p><strong>Salary:</strong> <span id="job-salary"></span></p>
+                <p><strong>Employment Type:</strong> <span id="job-type"></span></p>
+                <p><strong>Date of Recruitment:</strong> <span id="job-date"></span></p>
+                <p id="job-description">Job Description</p>
+                <p><strong>Requirements:</strong></p>
+                <p id="job-requirements">Job Requirements</p>
+                <a id="apply-link" href="apply.html" class="green-button">Apply Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Stay updated with the latest job opportunities and career tips.</p>
+                <form class="subscribe-form" action="#" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email address">
+                    <button type="submit" class="subscribe-button">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-column">
+                <h3>Headquarters</h3>
+                <p>Nairobi CBD Campus<br>JKUAT Towers (former ICEA)-Kenyatta Avenue<br>P.O. Box 62000 – 00200, Nairobi.<br>Tel: 0705950712</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p>Email: info@jkuatcareers.com<br>Phone: +254 123 456 789<br>Address: Nairobi, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample job details based on job ID
+        const jobs = {
+            1: {
+                title: 'Software Engineer',
+                salary: '$60,000 - $80,000 per year',
+                employment_type: 'Full-time',
+                recruitment_date: 'May 17, 2024',
+                description: 'We are looking for a skilled software engineer to join our team...',
+                requirements: 'Bachelor\'s degree in Computer Science, 3+ years of experience...',
+            },
+            2: {
+                title: 'Data Analyst',
+                salary: '$50,000 - $70,000 per year',
+                employment_type: 'Contract',
+                recruitment_date: 'June 1, 2024',
+                description: 'We are seeking a data analyst to help us analyze and interpret complex data...',
+                requirements: 'Bachelor\'s degree in Data Science, 2+ years of experience...',
+            },
+            3: {
+                title: 'Project Manager',
+                salary: '$70,000 - $90,000 per year',
+                employment_type: 'Full-time',
+                recruitment_date: 'June 15, 2024',
+                description: 'We need an experienced project manager to oversee our projects...',
+                requirements: 'Bachelor\'s degree in Management, 5+ years of experience...',
+            },
+        };
+
+        // Function to get URL parameter
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        const jobId = getParameterByName('id');
+        const job = jobs[jobId];
+
+        if (job) {
+            document.getElementById('job-title').textContent = job.title;
+            document.getElementById('job-salary').textContent = job.salary;
+            document.getElementById('job-type').textContent = job.employment_type;
+            document.getElementById('job-date').textContent = job.recruitment_date;
+            document.getElementById('job-description').textContent = job.description;
+            document.getElementById('job-requirements').textContent = job.requirements;
+            document.getElementById('apply-link').href = `apply.html?id=${jobId}`;
+        } else {
+            document.querySelector('.center-form').innerHTML = '<p>Job not found.</p>';
+        }
+    </script>
+</body>
+</html>
